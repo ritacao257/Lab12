@@ -1,10 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-</LinearLayout>
+    <com.sdsmdg.harjot.crollerTest.Croller
+        android:id="@+id/croller"
+        android:layout_width="380dp"
+        android:layout_height="350dp"
+        android:layout_marginBottom="16dp"
+        app:back_circle_color="#ADD8E6"
+        app:back_circle_radius="100"
+        app:indicator_color="#191970"
+        app:indicator_width="20"
+        app:is_continuous="false"
+        app:label="Manage your life"
+        app:label_color="#191970"
+        app:label_size="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:main_circle_color="#FFFFFF"
+        app:max="1000"
+        app:progress_primary_circle_size="20"
+        app:progress_primary_color="#008080"
+        app:progress_secondary_circle_size="15"
+        app:progress_secondary_color="#ADD8E6"
+        app:start_offset="45" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Add"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/simpleEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.993" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="100dp"
+        android:text="View"
+        app:layout_constraintBottom_toTopOf="@+id/croller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/simpleEditText" />
+
+    <EditText
+        android:id="@+id/simpleEditText"
+        android:layout_width="198dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#005CAF"
+        android:hint="Underline color change"
+        android:textColor="#2EA9DF"
+        android:textColorHighlight="#51A8DD"
+        android:textColorHint="#81C7D4"
+        app:layout_constraintBottom_toTopOf="@+id/croller"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704" />
+
+
+</android.support.constraint.ConstraintLayout>
