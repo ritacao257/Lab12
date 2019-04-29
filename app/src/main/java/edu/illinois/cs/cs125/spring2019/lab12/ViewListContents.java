@@ -23,7 +23,7 @@ public class ViewListContents extends AppCompatActivity {
     /**
      * comment.
      */
-    private ArrayList<ToDos> userList;
+    private ArrayList<ToDos> todoList;
 
     /**
      * comment.
@@ -47,7 +47,7 @@ public class ViewListContents extends AppCompatActivity {
 
         myDB = new DataBaseHelper(this);
 
-        userList = new ArrayList<>();
+        todoList = new ArrayList<>();
         Cursor data = myDB.getListContents();
         int numRows = data.getCount();
         if (numRows == 0) {
@@ -56,12 +56,12 @@ public class ViewListContents extends AppCompatActivity {
             int i = 0;
             while (data.moveToNext()) {
                 todos = new ToDos(data.getString(1));
-                userList.add(i, todos);
+                todoList.add(i, todos);
                 System.out.println(data.getString(1));
-                System.out.println(userList.get(i).getThing());
+                System.out.println(todoList.get(i).getThing());
                 i++;
             }
-            MainActivitySecond adapter =  new MainActivitySecond(this, R.layout.list_adapter, userList);
+            MainActivitySecond adapter =  new MainActivitySecond(this, R.layout.list_adapter, todoList);
             listView = (ListView) findViewById(R.id.list_view);
             listView.setAdapter(adapter);
         }
